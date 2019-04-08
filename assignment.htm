@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script>
+function validateemail()  
+{  
+var x=document.my_form.email.value;  
+var p= document.my_form.pass.value;
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length ){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+" \n dotposition:"+dotposition);  
+  return false;  
+  }  
+  else if (p.length<5) 
+  {
+    alert("password must be more than 5 characters");
+   return false;
+  }
+}  
+</script>
+</head>
+<body>
+<center>
+<h2>Sign up</h2>
+<form name="my_form" method="post" onsubmit="return validateemail()" action="login.html" >
+<table border="1px" cellpadding="20px"> 
+        <tr>
+            <td>name</td>
+            <td><input type="text" name="name" required="required" ></td>
+        </tr>
+            <tr>
+            <td>email</td>
+            <td><input type="text" name="email" required="required" ></td>
+            <script type="text/javascript">
+                x= document.email.value;
+            </script>
+        </tr>  
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="pass" required="required"></td>
+        </tr> 
+        <tr>
+            <td colspan="2">
+                <center><input type="submit" value="Register" ></center>
+            </td>
+        </tr>
+    </table>
+
+</center>
+</body>
+</html>
